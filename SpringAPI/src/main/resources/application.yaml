@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: SpringAPI
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 50MB
+springdoc:
+  default-produces-media-type: application/json
+server:
+  port: 8088
+  servlet:
+    context-path: /api/
+app:
+  server:
+    name: DEV-SERVER-1
+  nominatim-endpoint: "https://nominatim.openstreetmap.org/search?q={query}&countrycodes=nl&format=json&limit={limit}&addressdetails=1"

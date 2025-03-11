@@ -64,6 +64,21 @@ We are using Kubernetes to deploy application components as containers to a kube
     \conninfo
     ```
 
+## Mail DEV
+Create an email server deployment in Kubernetes.
+
+```
+kubectl apply -f mail-dev.yaml
+kubectl get deployments
+kubectl get pods
+```
+
+Create a Service for other pods to communicate with MailDev and to be able to access the web interface.
+
+```
+kubectl apply -f mail-dev-service.yaml
+kubectl get svc
+```
 ## Spring Boot API
 
 ## Angular web application

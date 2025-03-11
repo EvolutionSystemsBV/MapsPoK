@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://51.89.74.28:30432/ps_mapdb
+    username: ps_mapuser
+    password: mappass1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: 51.89.74.28
+    port: 31025
+    username: mailuser
+    password: mailpass
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+application:
+  security:
+    jwt:
+      secret-key: 60243f3c39cf420acb1a791b727aa50cffff3c436ce314c31c03d3f99e0c6eb8
+      expiration: 8640000
+  email:
+    sender: info@evosystems.nl
+    confirmation-url: http://localhost:4200/activate_account
+

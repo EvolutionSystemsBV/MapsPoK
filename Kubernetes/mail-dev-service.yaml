@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mail-dev-service
+  labels:
+    app: mail-dev-service
+spec:
+  type: NodePort
+  ports:
+    - name: smtp-port
+      protocol: TCP
+      port: 1025
+      targetPort: 1025
+      nodePort: 31025
+    - name: web-port
+      protocol: TCP
+      port: 1080
+      targetPort: 1080
+      nodePort: 31080
+  selector:
+    app: mail-dev-pod

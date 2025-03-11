@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mail-dev-pod
+spec:
+  selector:
+    matchLabels:
+      app: mail-dev-pod
+  template:
+    metadata:
+      labels:
+        app: mail-dev-pod
+    spec:
+      containers:
+        - name: mail-dev-bsn
+          image: maildev/maildev
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: smtp-port
+              containerPort: 1025
+              protocol: TCP
+            - name: web-port
+              containerPort: 1080
+              protocol: TCP
